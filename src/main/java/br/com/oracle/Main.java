@@ -1,13 +1,21 @@
 package br.com.oracle;
 
-import java.io.IOException;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 public class Main {
     public static void main(String[] args) {
-        ClientHttp clientHttp = new ClientHttp();
-        String json = clientHttp.fetchData("https://economia.awesomeapi.com.br/json/last/");
-        System.out.println(json);
+        List<CurrencyQuote> currencyQuotes = ExtractorCurrencyQuotes.extractorCurrencies();
+        currencyQuotes.forEach(currencyQuote -> {
+            System.out.println(currencyQuote.getName());
+            System.out.println(currencyQuote.getBid());
+        });
     }
 }
