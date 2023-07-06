@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName;
 
 public class CurrencyQuote {
 
+    @SerializedName("code")
+    private String code;
+
     @SerializedName("name")
     private String name;
     @SerializedName("bid")
@@ -15,16 +18,12 @@ public class CurrencyQuote {
     public CurrencyQuote() {
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getCode() {
+        return code;
     }
 
     public String getName() {
         return this.name;
-    }
-
-    public void setBid(Double bid) {
-        this.bid = bid;
     }
 
     public Double getBid() {
@@ -33,5 +32,11 @@ public class CurrencyQuote {
 
     public Double getAsk() {
         return this.ask;
+    }
+
+    @Override
+    public String toString() {
+        return (this.name + "   |   Compra: R$ " + this.bid +
+                "   |   Venda: R$ " + this.ask);
     }
 }
