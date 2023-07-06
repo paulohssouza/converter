@@ -1,7 +1,8 @@
-package br.com.oracle;
+package br.com.oracle.utils;
 
+import br.com.oracle.model.CurrencyQuote;
+import br.com.oracle.utils.ClientHttp;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;

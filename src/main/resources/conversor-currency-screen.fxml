@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.oracle.ConversorCurrencyScreenController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.oracle.controller.ConversorCurrencyScreenController">
     <TextField fx:id="textFiledReal" layoutX="326.0" layoutY="86.0" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="90.0" />
     <Label layoutX="387.0" layoutY="30.0" text="Conversor de Moedas" textAlignment="CENTER" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
         <font>

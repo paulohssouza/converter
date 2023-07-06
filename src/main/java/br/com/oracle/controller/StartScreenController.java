@@ -1,5 +1,7 @@
-package br.com.oracle;
+package br.com.oracle.controller;
 
+import br.com.oracle.utils.ExtractorCurrencyQuotes;
+import br.com.oracle.model.CurrencyQuote;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

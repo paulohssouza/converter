@@ -1,4 +1,4 @@
-package br.com.oracle;
+package br.com.oracle.model;
 
 import com.google.gson.annotations.SerializedName;
 
