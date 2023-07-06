@@ -3,12 +3,18 @@ package br.com.oracle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class StartScreenController implements Initializable {
@@ -29,5 +35,20 @@ public class StartScreenController implements Initializable {
         List<CurrencyQuote> currencyQuoteList = ExtractorCurrencyQuotes.extractorCurrencies();
         ObservableList<CurrencyQuote> currencyQuoteObservableList = FXCollections.observableList(currencyQuoteList);
         listCurrencyQuote.setItems(currencyQuoteObservableList);
+    }
+
+    public void currencyConverterAction() {
+        try{
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/conversor-currency-screen.fxml")));
+            Scene scene = new Scene(root);
+            stage.setTitle("Conversor de Moedas");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+
     }
 }
