@@ -4,6 +4,7 @@ import br.com.oracle.utils.ExtractorCurrencyQuotes;
 import br.com.oracle.model.CurrencyQuote;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -52,5 +53,19 @@ public class StartScreenController implements Initializable {
             exception.printStackTrace();
         }
 
+    }
+
+    public void speedConverterAction() {
+        try{
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/conversor-speed-screen.fxml")));
+            Scene scene = new Scene(root);
+            stage.setTitle("Conversor de Velocidade");
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
     }
 }

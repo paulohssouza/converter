@@ -3,36 +3,79 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.oracle.controller.ConversorCurrencyScreenController">
-    <TextField fx:id="textFiledReal" layoutX="326.0" layoutY="86.0" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="90.0" />
-    <Label layoutX="387.0" layoutY="30.0" text="Conversor de Moedas" textAlignment="CENTER" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="20.0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.oracle.controller.ConversorCurrencyScreenController">
+    <Label alignment="CENTER" layoutX="387.0" layoutY="30.0" text="Conversor de Moedas" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
         <font>
           <Font size="24.0" />
         </font>
     </Label>
-    <Label layoutX="242.0" layoutY="90.0" text="Valor R$" textAlignment="CENTER" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="90.0">
-        <font>
-          <Font size="14.0" />
-        </font>
-    </Label>
-    <Label layoutX="242.0" layoutY="167.0" text="Selecione a moeda:" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="160.0">
-        <font>
-          <Font size="14.0" />
-        </font>
-    </Label>
-    <ComboBox fx:id="comboBoxCurrencies" layoutX="326.0" layoutY="163.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="90.0" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="155.0" />
-    <Label fx:id="labelResultCurrencyConvert" layoutX="387.0" layoutY="248.0" prefHeight="50.0" prefWidth="150.0" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="230.0">
-        <font>
-          <Font name="System Bold" size="18.0" />
-        </font>
-    </Label>
-    <Button fx:id="buttonCurrencyConvert" layoutX="375.0" layoutY="337.0" mnemonicParsing="false" onAction="#currencyConvert" text="CONVERTER" textAlignment="CENTER" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
-        <font>
-          <Font name="System Bold" size="18.0" />
-        </font>
-    </Button>
+    <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0">
+        <TextField fx:id="textFiledReal" layoutX="171.0" layoutY="104.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#fieldValidation" prefHeight="30.0" prefWidth="150.0" />
+        <Label layoutX="89.0" layoutY="107.0" text="Valor:" textAlignment="CENTER">
+            <font>
+              <Font size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="89.0" layoutY="185.0" text="Selecione a moeda:">
+            <font>
+              <Font size="14.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="comboBoxCurrencies" layoutX="230.0" layoutY="180.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="90.0" />
+        <Label fx:id="labelResultCurrencyConvert" layoutX="125.0" layoutY="226.0" prefHeight="50.0" prefWidth="150.0">
+            <font>
+              <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="buttonCurrencyConvert" layoutX="125.0" layoutY="286.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#currencyConvert" prefHeight="40.0" prefWidth="150.0" text="CONVERTER" textAlignment="CENTER">
+            <font>
+              <Font name="System Bold" size="18.0" />
+            </font>
+        </Button>
+        <Label layoutX="108.0" layoutY="17.0" text="Real x Outras moedas">
+           <font>
+               <Font name="System Bold" size="18.0" />
+           </font>
+        </Label>
+    </Pane>
+    <Pane layoutX="533.0" layoutY="72.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="400.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+        <Label layoutX="108.0" layoutY="14.0" text="Outras moedas x Real">
+           <font>
+               <Font name="System Bold" size="18.0" />
+           </font>
+        </Label>
+        <Label layoutX="70.0" layoutY="110.0" text="Valor:">
+           <font>
+               <Font size="14.0" />
+           </font>
+        </Label>
+        <Label layoutX="70.0" layoutY="181.0" text="Selecione a moeda:">
+           <font>
+               <Font size="14.0" />
+           </font>
+        </Label>
+        <Label fx:id="labelResultRealConvert" layoutX="115.0" layoutY="223.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="150.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+        <ComboBox fx:id="comboBoxCurrencies2" layoutX="230.0" layoutY="176.0" prefHeight="30.0" prefWidth="90.0" />
+        <TextField fx:id="textFiledCurrency" layoutX="170.0" layoutY="105.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#fieldValidation2" prefHeight="30.0" prefWidth="150.0" />
+        <Button fx:id="buttonRealConvert" layoutX="115.0" layoutY="286.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#realConvert" prefHeight="40.0" prefWidth="150.0" text="CONVERTER">
+           <font>
+               <Font name="System Bold" size="18.0" />
+           </font>
+        </Button>
+    </Pane>
+   <Separator layoutX="400.0" layoutY="80.0" orientation="VERTICAL" prefHeight="300.0">
+      <effect>
+         <Shadow blurType="ONE_PASS_BOX" />
+      </effect>
+   </Separator>
 </AnchorPane>
